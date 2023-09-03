@@ -2,6 +2,8 @@ import D3Test from "./D3Test";
 import LinePlot from "./LinePlot";
 import RoadMap from "./RoadMap";
 import TreeChart from "./TreeChart";
+import TreeChartHorizontal from "./TreeChartHorizontal";
+
 
 const initialData = {
   "name": "Fullstack Developer",
@@ -113,7 +115,7 @@ const initialData = {
 export default function Home() {
   return (
     <main className="p-3">
-      <TreeChart data={initialData} />
+      <TreeChartHorizontal data={initialData} />
     </main>
   )
 }

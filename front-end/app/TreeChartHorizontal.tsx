@@ -22,9 +22,7 @@ function TreeChart({ data }) {
 
   // will be called initially and on every data change
   useEffect(() => {
-    const svg = select(svgRef.current)
-      .attr("width", 2000) // Swap width and height
-      .attr("height", 800);
+    const svg = select(svgRef.current)// Swap width and height
 
     // use dimensions from useResizeObserver,
     // but use getBoundingClientRect on initial render
@@ -37,8 +35,8 @@ function TreeChart({ data }) {
     const treeLayout = tree().size([width, height]);
 
     const linkGenerator = linkHorizontal()
-      .x((link) => link.x)
-      .y((link) => link.y);
+      .x((link) => link.y)
+      .y((link) => link.x);
 
     // enrich hierarchical data with coordinates
     treeLayout(root);
@@ -52,8 +50,8 @@ function TreeChart({ data }) {
       .data(root.descendants())
       .join((enter) => enter.append("circle").attr("opacity", 0))
       .attr("class", "node")
-      .attr("cx", (node) => node.x)
-      .attr("cy", (node) => node.y)
+      .attr("cx", (node) => node.y)
+      .attr("cy", (node) => node.x)
       .attr("r", 4)
       .transition()
       .duration(500)
@@ -92,8 +90,8 @@ function TreeChart({ data }) {
       .data(root.descendants())
       .join((enter) => enter.append("text").attr("opacity", 0))
       .attr("class", "label")
-      .attr("x", (node) => node.x)
-      .attr("y", (node) => node.y - 12)
+      .attr("x", (node) => node.y)
+      .attr("y", (node) => node.x - 12)
       .attr("text-anchor", "middle")
       .attr("font-size", 12)
       .text((node) => node.data.name)
@@ -104,7 +102,7 @@ function TreeChart({ data }) {
   }, [data, dimensions, previouslyRenderedData]);
 
   return (
-    <div ref={wrapperRef} className="mt-6">
+    <div ref={wrapperRef} className="ml-12">
       <svg ref={svgRef}></svg>
     </div>
   );
