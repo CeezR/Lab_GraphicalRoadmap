@@ -1,5 +1,6 @@
 import D3Test from "./D3Test";
 import LinePlot from "./LinePlot";
+import RadialClusterTree from "./RadialClusterTree";
 import RoadMap from "./RoadMap";
 import TreeChart from "./TreeChart";
 import TreeChartHorizontal from "./TreeChartHorizontal";
@@ -115,7 +116,7 @@ const initialData = {
 export default function Home() {
   return (
     <main className="p-3">
-      <TreeChartHorizontal data={initialData} />
+      <RadialClusterTree data={initialData} />
     </main>
   )
 }
