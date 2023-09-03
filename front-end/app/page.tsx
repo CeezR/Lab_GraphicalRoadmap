@@ -4,31 +4,115 @@ import RoadMap from "./RoadMap";
 import TreeChart from "./TreeChart";
 
 const initialData = {
-  name: "😐",
-  children: [
+  "name": "Fullstack Developer",
+  "children": [
     {
-      name: "🙂",
-      children: [
+      "name": "Frontend Development",
+      "children": [
         {
-          name: "😀"
+          "name": "HTML/CSS",
+          "children": [
+            {
+              "name": "HTML5",
+              "children": []
+            },
+            {
+              "name": "CSS3",
+              "children": []
+            },
+            {
+              "name": "Responsive Design",
+              "children": []
+            }
+          ]
         },
         {
-          name: "😁"
-        },
-        {
-          name: "🤣"
+          "name": "JavaScript",
+          "children": [
+            {
+              "name": "React",
+              "children": []
+            },
+            {
+              "name": "Angular",
+              "children": []
+            },
+            {
+              "name": "Vue.js",
+              "children": []
+            }
+          ]
         }
       ]
     },
     {
-      name: "😔"
+      "name": "Backend Development",
+      "children": [
+        {
+          "name": "Server-Side Language",
+          "children": [
+            {
+              "name": "Node.js",
+              "children": []
+            },
+            {
+              "name": "Python (Flask/Django)",
+              "children": []
+            },
+            {
+              "name": "Java (Spring Boot)",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "API Development",
+          "children": [
+            {
+              "name": "RESTful API design",
+              "children": []
+            },
+            {
+              "name": "GraphQL",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Databases",
+          "children": [
+            {
+              "name": "SQL",
+              "children": []
+            },
+            {
+              "name": "NoSQL (MongoDB, Redis)",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Authentication & Authorization",
+          "children": [
+            {
+              "name": "Passport.js",
+              "children": []
+            },
+            {
+              "name": "OAuth 2.0",
+              "children": []
+            }
+          ]
+        }
+      ]
     }
   ]
-};
+}
+
 
 export default function Home() {
   return (
-    <main>
+    <main className="p-3">
       <TreeChart data={initialData} />
     </main>
   )
