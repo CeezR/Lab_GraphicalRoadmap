@@ -1,4 +1,5 @@
 import D3Test from "./D3Test";
+import IndentedTree from "./IndentedTree";
 import LinePlot from "./LinePlot";
 import RadialClusterTree from "./RadialClusterTree";
 import RoadMap from "./RoadMap";
@@ -771,13 +772,10 @@ const enhancedDummyData = {
 };
 
 
-
-
-
 export default function Home() {
   return (
     <main className="p-3">
-      <ZoomableSunburstChart data={enhancedDummyData} />
+      <IndentedTree data={enhancedData} />
     </main>
   )
 }
