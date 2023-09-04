@@ -1,116 +1,116 @@
-"use client"
-import React, { useState } from 'react'
-import IndentedTree from './IndentedTree'
-import RadialClusterTree from './RadialClusterTree'
-import TreeChart from './TreeChart'
-import TreeChartHorizontal from './TreeChartHorizontal'
-import TreeDiagram from './TreeDiagram'
+"use client";
+import React, { useState } from "react";
+import IndentedTree from "./IndentedTree";
+import RadialClusterTree from "./RadialClusterTree";
+import TreeChart from "./TreeChart";
+import TreeChartHorizontal from "./TreeChartHorizontal";
+import TreeDiagram from "./TreeDiagram";
 
 const initialData = {
-  "name": "Fullstack Developer",
-  "children": [
+  name: "Fullstack Developer",
+  children: [
     {
-      "name": "Frontend Development",
-      "children": [
+      name: "Frontend Development",
+      children: [
         {
-          "name": "HTML/CSS",
-          "children": [
+          name: "HTML/CSS",
+          children: [
             {
-              "name": "HTML5",
-              "children": []
+              name: "HTML5",
+              children: [],
             },
             {
-              "name": "CSS3",
-              "children": []
+              name: "CSS3",
+              children: [],
             },
             {
-              "name": "Responsive Design",
-              "children": []
-            }
-          ]
+              name: "Responsive Design",
+              children: [],
+            },
+          ],
         },
         {
-          "name": "JavaScript",
-          "children": [
+          name: "JavaScript",
+          children: [
             {
-              "name": "React",
-              "children": []
+              name: "React",
+              children: [],
             },
             {
-              "name": "Angular",
-              "children": []
+              name: "Angular",
+              children: [],
             },
             {
-              "name": "Vue.js",
-              "children": []
-            }
-          ]
-        }
-      ]
+              name: "Vue.js",
+              children: [],
+            },
+          ],
+        },
+      ],
     },
     {
-      "name": "Backend Development",
-      "children": [
+      name: "Backend Development",
+      children: [
         {
-          "name": "Server-Side Language",
-          "children": [
+          name: "Server-Side Language",
+          children: [
             {
-              "name": "Node.js",
-              "children": []
+              name: "Node.js",
+              children: [],
             },
             {
-              "name": "Python (Flask/Django)",
-              "children": []
+              name: "Python (Flask/Django)",
+              children: [],
             },
             {
-              "name": "Java (Spring Boot)",
-              "children": []
-            }
-          ]
+              name: "Java (Spring Boot)",
+              children: [],
+            },
+          ],
         },
         {
-          "name": "API Development",
-          "children": [
+          name: "API Development",
+          children: [
             {
-              "name": "RESTful API design",
-              "children": []
+              name: "RESTful API design",
+              children: [],
             },
             {
-              "name": "GraphQL",
-              "children": []
-            }
-          ]
+              name: "GraphQL",
+              children: [],
+            },
+          ],
         },
         {
-          "name": "Databases",
-          "children": [
+          name: "Databases",
+          children: [
             {
-              "name": "SQL",
-              "children": []
+              name: "SQL",
+              children: [],
             },
             {
-              "name": "NoSQL (MongoDB, Redis)",
-              "children": []
-            }
-          ]
+              name: "NoSQL (MongoDB, Redis)",
+              children: [],
+            },
+          ],
         },
         {
-          "name": "Authentication & Authorization",
-          "children": [
+          name: "Authentication & Authorization",
+          children: [
             {
-              "name": "Passport.js",
-              "children": []
+              name: "Passport.js",
+              children: [],
             },
             {
-              "name": "OAuth 2.0",
-              "children": []
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+              name: "OAuth 2.0",
+              children: [],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 const enhancedDummyData = {
   name: "Fullstack Developer",
@@ -396,14 +396,51 @@ const enhancedDummyData = {
 };
 
 function RoadMap() {
+  const [inTree, setInTree] = useState(true);
+  const [rdCluster, setRdCluster] = useState(false);
+  const [tree, setTree] = useState(false);
+  const [treeHorizontal, setTreeHorizontal] = useState(false);
+
+  const handleinTreeClick = () => {
+    setInTree(!inTree)
+  }
+
+  const handlerdClusterClick = () => {
+    setRdCluster(!rdCluster)
+  }
+
+  const handletreeClick = () => {
+    setTree(!tree)
+  }
+
+  const handletreeHorizontalClick = () => {
+    setTreeHorizontal(!treeHorizontal)
+  }
+
   return (
     <>
-    <IndentedTree data={enhancedDummyData} />
-    <RadialClusterTree data={enhancedDummyData} />
-    <TreeChart data={initialData} />
-    <TreeChartHorizontal data={initialData} />
+      <span className="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm">
+        <button onClick={handleinTreeClick} className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+          IndentedTree
+        </button>
+
+        <button onClick={handlerdClusterClick} className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+          RandialClusterTree
+        </button>
+
+        <button onClick={handletreeClick} className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+          TreeChart
+        </button>
+        <button onClick={handletreeHorizontalClick} className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+          TreeChart-Horizontal
+        </button>
+      </span>
+      {inTree && <IndentedTree data={enhancedDummyData} />}
+      {rdCluster && <RadialClusterTree data={enhancedDummyData} />}
+      {tree && <TreeChart data={initialData} />}
+      {treeHorizontal && <TreeChartHorizontal data={initialData} />}
     </>
-  )
+  );
 }
 
-export default RoadMap
+export default RoadMap;
