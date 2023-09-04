@@ -1,6 +1,10 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import IndentedTree from './IndentedTree'
+import RadialClusterTree from './RadialClusterTree'
+import TreeChart from './TreeChart'
+import TreeChartHorizontal from './TreeChartHorizontal'
+import TreeDiagram from './TreeDiagram'
 
 const initialData = {
   "name": "Fullstack Developer",
@@ -769,6 +773,10 @@ function RoadMap() {
   return (
     <>
     <IndentedTree data={enhancedDummyData} />
+    <RadialClusterTree data={enhancedDummyData} />
+    <TreeChart data={initialData} />
+    <TreeChartHorizontal data={initialData} />
+
     </>
   )
 }
