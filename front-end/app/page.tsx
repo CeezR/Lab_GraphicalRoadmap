@@ -775,7 +775,7 @@ const enhancedDummyData = {
 export default function Home() {
   return (
     <main className="p-3">
-      <IndentedTree data={enhancedData} />
+      <IndentedTree data={enhancedDummyData} />
     </main>
   )
 }

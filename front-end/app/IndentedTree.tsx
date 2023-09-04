@@ -23,13 +23,13 @@ const IndentedTree = ({ data } : IndentedTreeProps) => {
         label: "Size",
         value: d => d.value,
         format,
-        x: 280
+        x: 430
       },
       {
         label: "Count",
         value: d => d.children ? 0 : 1,
         format: (value, d) => d.children ? format(value) : "-",
-        x: 340
+        x: 480
       }
     ];
 
