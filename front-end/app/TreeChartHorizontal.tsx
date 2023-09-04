@@ -22,7 +22,9 @@ function TreeChart({ data }) {
 
   // will be called initially and on every data change
   useEffect(() => {
-    const svg = select(svgRef.current)// Swap width and height
+    const svg = select(svgRef.current)
+      .attr("width", 1000)
+      .attr("height", 500)// Swap width and height
 
     // use dimensions from useResizeObserver,
     // but use getBoundingClientRect on initial render
